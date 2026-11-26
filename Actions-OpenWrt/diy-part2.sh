@@ -37,7 +37,6 @@ CONFIG_PACKAGE_kmod-usb-net-cdc-ether=y
 CONFIG_PACKAGE_kmod-usb-storage=y
 CONFIG_PACKAGE_luci-app-samba4=y
 CONFIG_PACKAGE_luci-app-quickfile=y
-CONFIG_PACKAGE_luci-app-openlist=y
 
 # System & UI
 CONFIG_PACKAGE_luci-app-store=y
