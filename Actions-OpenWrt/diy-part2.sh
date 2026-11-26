@@ -20,47 +20,33 @@
 #sed -i 's/OpenWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate
 # ==================== 自定义插件列表 ====================
 # 从 custom-packages.sh 提取的未注释插件
-CUSTOM_PKGS="
-luci-app-run
-luci-i18n-quickstart-zh-cn
-bash
-quickfile
-luci-app-quickfile
-luci-i18n-quickfile-zh-cn
-luci-app-uninstall
-luci-theme-aurora
-luci-app-aurora-config
-luci-i18n-aurora-config-zh-cn
-luci-app-adguardhome
-luci-proto-wireguard
-luci-app-tailscale-community
-luci-i18n-tailscale-community-zh-cn
-luci-app-partexp
-luci-i18n-partexp-zh-cn
-luci-app-watchdog
-luci-i18n-watchdog-zh-cn
-luci-app-appfilter
-luci-i18n-appfilter-zh-cn
-luci-app-lucky
-lucky
-luci-app-gecoosac
-gecoosac
-webdav2
-luci-app-unishare
-luci-app-bandix
-luci-i18n-bandix-zh-cn
-luci-i18n-cloudflared-zh-cn
-luci-i18n-ddns-go-zh-cn
-luci-i18n-diskman-zh-cn
-luci-i18n-filebrowser-go-zh-cn
-luci-i18n-lxc-zh-cn
-luci-i18n-pppoe-server-zh-cn
-luci-i18n-samba4-zh-cn
-luci-i18n-ttyd-zh-cn
-"
+cat >> .config << 'EOF'
 
-for pkg in $CUSTOM_PKGS; do
-    echo "CONFIG_PACKAGE_${pkg}=y" >> .config
-done
+# Network & VPN
+CONFIG_PACKAGE_luci-app-tailscale=y
+CONFIG_PACKAGE_luci-proto-wireguard=y
+CONFIG_PACKAGE_luci-app-ddns-go=y
+CONFIG_PACKAGE_lucky=y
+CONFIG_PACKAGE_luci-app-lucky=y
+CONFIG_PACKAGE_luci-i18n-lucky-zh-cn=y
+CONFIG_PACKAGE_luci-app-wol=y
 
-echo "✅ 已追加自定义插件列表到 .config"
+# USB & File Sharing
+CONFIG_PACKAGE_kmod-usb-net-rndis=y
+CONFIG_PACKAGE_kmod-usb-net-cdc-ether=y
+CONFIG_PACKAGE_kmod-usb-storage=y
+CONFIG_PACKAGE_luci-app-samba4=y
+CONFIG_PACKAGE_luci-app-quickfile=y
+CONFIG_PACKAGE_luci-app-openlist=y
+
+# System & UI
+CONFIG_PACKAGE_luci-app-store=y
+CONFIG_PACKAGE_luci-app-ttyd=y
+CONFIG_PACKAGE_luci-app-nlbwmon=y
+CONFIG_PACKAGE_luci-theme-argon=y
+CONFIG_PACKAGE_luci-app-argon-config=y
+CONFIG_PACKAGE_luci-compat=y
+
+# Chinese Language
+CONFIG_PACKAGE_luci-i18n-base-zh-cn=y
+EOF
