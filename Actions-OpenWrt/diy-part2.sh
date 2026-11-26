@@ -23,9 +23,9 @@
 cat >> .config << 'EOF'
 
 # Network & VPN
-CONFIG_PACKAGE_luci-app-tailscale=y
+# CONFIG_PACKAGE_luci-app-tailscale=y
 CONFIG_PACKAGE_luci-proto-wireguard=y
-CONFIG_PACKAGE_luci-app-ddns-go=y
+# CONFIG_PACKAGE_luci-app-ddns-go=y
 CONFIG_PACKAGE_lucky=y
 CONFIG_PACKAGE_luci-app-lucky=y
 CONFIG_PACKAGE_luci-i18n-lucky-zh-cn=y
