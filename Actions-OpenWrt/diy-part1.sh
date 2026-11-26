@@ -17,6 +17,5 @@ echo 'src-git kenzok8 https://github.com/kenzok8/openwrt-packages.git' >> feeds.
 # Uncomment a feed source
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 git clone https://github.com/sbwml/luci-app-quickfile package/quickfile
-git clone https://github.com/lm379/luci-app-openlist package/openlist
 # Add a feed source
 #echo 'src-git name https://github.com/user/repo' >>feeds.conf.default
